@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Pink</title>
+    <link rel="stylesheet" href="/css/style.min.css">
   </head>
   <body>
     <header class="page-header">
@@ -11,7 +12,9 @@
       </a>
 
       <nav class="main-nav">
-        <button class="main-nav__toggle"></button>
+        <button class="main-nav__toggle">
+            <span class="visually-hidden">Открыть меню</span>
+        </button>
         <ul class="main-nav__list site-list">
           <li class="site-list__item">
             <a class="site-list__link" href="#">Главная</a>
@@ -61,9 +64,11 @@
       </section>
 
       <section class="features">
-        <h2 class="visually-hidden">Особенности приложения!</h2>
-        <p class="features__slogan">Устали от серости мегаполиса?</p>
-        <p class="features__slogan">Нам есть, что вам предложить!</p>
+        <header class="features__header">
+            <h2 class="visually-hidden">Особенности приложения!</h2>
+            <p class="features__slogan">Устали от серости мегаполиса?</p>
+            <p class="features__slogan">Нам есть, что вам предложить!</p>
+        </header>
         <ul class="features__list">
           <li class="features__item features-item">
             <h3 class="features-item__title">Поднимает настроение</h3>
@@ -232,5 +237,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/script.min.js"></script>
   </body>
 </html>
