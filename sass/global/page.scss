@@ -1,0 +1,15 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+body {
+    @include reset;
+    font-family: $font;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $font-color;
+}
