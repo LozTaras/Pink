@@ -1,0 +1,58 @@
+.reviews {
+    @include mobile-positionner;
+    width: 100%;
+
+    &__list {
+        @include reset-list;
+
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    &__item {
+        display: none;
+        flex-shrink: 0;
+        width: 100%;
+    }
+
+    &__item--showed {
+        display: block;
+    }
+
+    &__user-name {
+        text-align: center;
+    }
+
+    &__user-profession {
+        display: block;
+        text-align: center;
+    }
+
+    &__content {
+        text-align: center;
+    }
+
+    &__button {
+        display: none;
+    }
+}
+
+@media (min-width: $tablet-width) {
+
+}
+
+@media (min-width: $desktop-width) {
+
+    .reviews {
+        @include desktop-positionner;
+
+        &__button {
+            display: block;
+        }
+
+        &__slider-controls {
+            display: none;
+        }
+    }
+}

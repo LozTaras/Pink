@@ -8,8 +8,25 @@ html {
 
 body {
     @include reset;
-    font-family: $font;
-    font-size: $font-size;
-    line-height: $line-height;
-    color: $font-color;
+    font-family: "Open Sans", "Arial", sans-serif;
+    font-size: 18px;
+    line-height: 30px;
+    color: #283645;
+    font-weight: 400;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.visually-hidden {
+    position: absolute;
+    overflow: hidden;
+
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+
+    clip: rect(0, 0, 0, 0);
 }

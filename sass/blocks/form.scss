@@ -1,0 +1,73 @@
+.form {
+    @include mobile-positionner;
+
+    &__text-wrapper {
+        border: none;
+    }
+
+    &__field-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__contact-info {
+        display: none;
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .form {
+
+        &__fields {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        &__text-wrapper {
+            width: 100%;
+
+            &--personal-info {
+                order: -3;
+            }
+
+            &--plarform {
+                order: -2;
+            }
+
+            &--personal-contact {
+                order: -1;
+            }
+        }
+
+        &__field-wrapper {
+            display: flex;
+            flex-direction: row;
+        }
+
+        &__contact-info {
+            display: table;
+        }
+
+        &__text-field {
+            flex-grow: 1;
+        }
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .form {
+        @include desktop-positionner;
+
+        &__text-wrapper {
+
+            &--personal-info {
+                width: 40%;
+            }
+
+            &--plarform {
+                width: 40%;
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+.panorama {
+    @include mobile-positionner;
+}
+
+@media (min-width: $tablet-width) {
+
+}
+
+@media (min-width: $desktop-width) {
+    .panorama {
+        @include desktop-positionner;
+    }
+}

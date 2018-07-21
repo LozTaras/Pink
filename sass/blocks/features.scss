@@ -1,0 +1,53 @@
+.features {
+    @include mobile-positionner;
+
+    &__list {
+        @include reset-list;
+    }
+
+    &__slogan {
+        text-align: center;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &__desc {
+        text-align: center;
+    }
+}
+
+@media (min-width: $tablet-width) {
+
+    .features {
+        &__list {
+            margin-left: 310px;
+        }
+
+        &__title {
+            text-align: left;
+        }
+
+        &__desc {
+            text-align: left;
+        }
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .features {
+        &__list {
+            @include desktop-positionner;
+            @include flex-sb;
+        }
+
+        &__title {
+            text-align: left;
+        }
+
+        &__desc {
+            text-align: left;
+        }
+    }
+}

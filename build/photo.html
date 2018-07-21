@@ -2,182 +2,187 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initials-cale=1">
     <title>Pink</title>
     <link rel="stylesheet" href="/css/style.css">
   </head>
   <body>
     <header class="page-header">
-      <a class="page-header__logo" href="#">
-        <img class="page-header__logo-img" src="img/" alt="Логотип Pink" >
-      </a>
+        <div class="page-header__wrapper">
+            <a class="page-header__logo" href="index.html">
+                <img class="page-header__logo-img" src="img/" alt="Логотип Pink" >
+            </a>
 
-      <nav class="main-nav">
-          <button class="main-nav__toggle">
-              <span class="visually-hidden">Открыть меню</span>
-          </button>
-        <ul class="main-nav__list site-list">
-          <li class="site-list__item">
-            <a class="site-list__link" href="#">Главная</a>
-          </li>
-          <li class="site-list__item">
-            <a class="site-list__link" href="#">Фотографии</a>
-          </li>
-          <li class="site-list__item">
-            <a class="site-list__link" href="#">Конкурс</a>
-          </li>
-          <li class="site-list__item">
-            <a href="#">HTML Academy</a>
-          </li>
-        </ul>
-      </nav>
+            <nav class="main-nav">
+                <button class="main-nav__toggle">
+                    <span class="visually-hidden">Открыть меню</span>
+                </button>
+                <ul class="main-nav__list site-list">
+                    <li class="site-list__item">
+                        <a class="site-list__link" href="#">Главная</a>
+                    </li>
+                    <li class="site-list__item">
+                        <a class="site-list__link" href="#">Фотографии</a>
+                    </li>
+                    <li class="site-list__item">
+                        <a class="site-list__link" href="#">Конкурс</a>
+                    </li>
+                    <li class="site-list__item">
+                        <a href="#">HTML Academy</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+        <section class="page-desc">
+            <h1 class="page-desc__title">Фотографии пользователей</h1>
+            <p class="page-desc__text">Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?</p>
+        </section>
     </header>
 
     <main class="page-main">
-      <section class="page-desc">
-        <h1 class="page-desc__title">Фотографии пользователей</h1>
-        <p class="page-desc__text">Взгляните на фотографии, которые выкладывают пользователи! Видите, как не хватает ваших?</p>
-      </section>
 
-      <section class="panorama">
-        <h2 class="visually-hidden">Панорама дня!</h2>
-        <img class="panorama__image" src="img/" alt="Панорама дня!">
-        <div class="panorama__comment comment">
-          <h3 class="comment__title">Анна<time class="comment__time"></time> (5 минут назад)</h3>
-          <p class="comment__text">Прыгать или нет? Напишите в коментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!</p>
-          <button class="comment__like" type="button">Нравится: <span class="comment__like-count">215</span></button>
-        </div>
-      </section>
+        <section class="panorama">
+            <h2 class="visually-hidden">Панорама дня!</h2>
+            <img class="panorama__image" src="img/" alt="Панорама дня!">
+            <div class="panorama__comment comment">
+                <h3 class="comment__title">Анна<time class="comment__time"></time> (5 минут назад)</h3>
+                <p class="comment__text">Прыгать или нет? Напишите в коментарии свой совет и смотрите прямую трансляцию в перископе, задавайте свои вопросы!</p>
+                <button class="comment__like" type="button">Нравится: <span class="comment__like-count">215</span></button>
+            </div>
+        </section>
 
-      <section class="photo-gallery">
-        <h2 class="visually-hidden">Галерея фотографий</h2>
-        <ul class="photo-gallery__list">
-          <li class="photo-gallery__item">
-            <img class="photo-gallery__image" src="img/">
-            <div class="photo-gallery__comment comment">
-              <h3 class="comment__title">Левон<time class="comment__time"></time> (5 часов назад)</h3>
-              <p class="comment__text">Вчера он на луну летал, сегодня в руки к нам попал.</p>
-              <button class="comment__like" type="button">Нравится: <span class="comment__like-count">356</span></button>
-            </div>
-          </li>
-          <li class="photo-gallery__item">
-            <img class="photo-gallery__image" src="img/">
-            <div class="photo-gallery__comment comment">
-              <h3 class="comment__title">Антон<time class="comment__time"></time> (12 часов назад)</h3>
-              <p class="comment__text">Соседи будут рады!</p>
-              <button class="comment__like" type="button">Нравится: <span class="comment__like-count">666</span></button>
-            </div>
-          </li>
-          <li class="photo-gallery__item">
-            <img class="photo-gallery__image" src="img/">
-            <div class="photo-gallery__comment comment">
-              <h3 class="comment__title">Борис<time class="comment__time"></time> (20 часов назад)</h3>
-              <p class="comment__text">Здесь могла быть ваша цитата о высоком и вечном.</p>
-              <button class="comment__like" type="button">Нравится: <span class="comment__like-count">215</span></button>
-            </div>
-          </li>
-          <li class="photo-gallery__item">
-            <img class="photo-gallery__image" src="img/">
-            <div class="photo-gallery__comment comment">
-              <h3 class="comment__title">Сергей<time class="comment__time"></time> (25 часов назад)</h3>
-              <p class="comment__text">Самая кубанская в мире!</p>
-              <button class="comment__like" type="button">Нравится: <span class="comment__like-count">4</span></button>
-            </div>
-          </li>
-          <li class="photo-gallery__item">
-            <img class="photo-gallery__image" src="img/">
-            <div class="photo-gallery__comment comment">
-              <h3 class="comment__title">Максим<time class="comment__time"></time> (40 часов назад)</h3>
-              <p class="comment__text">Где снег-то?</p>
-              <button class="comment__like" type="button">Нравится: <span class="comment__like-count">150</span></button>
-            </div>
-          </li>
-          <li class="photo-gallery__item">
-            <img class="photo-gallery__image" src="img/">
-            <div class="photo-gallery__comment comment">
-              <h3 class="comment__title">Надежда<time class="comment__time"></time> (45 часов назад)</h3>
-              <p class="comment__text">Всем GM и взаимные лайки!</p>
-              <button class="comment__like" type="button">Нравится: <span class="comment__like-count">2560</span></button>
-            </div>
-          </li>
-        </ul>
-      </section>
-
-      <section class="post">
-        <h1 class="post__title">Затмите их всех!<br> Выкладывайте все, что накопилось в телефоне!</h1>
-        <img class="post__image" src="img/" alt="Загруженное фото">
-        <div class="post__wrapper">
-          <div class="post__filters-wrapper">
-            <ul class="post__icons-list">
-              <li class="post__icons-item">
-                <img class="post__filter-icon" src="img/" alt="Значок увеличение">
-              </li>
-              <li class="post__icons-item">
-                <img class="post__filter-icon" src="img/" alt="Значок насыщенности">
-              </li>
-              <li class="post__icons-item">
-                <img class="post__filter-icon" src="img/" alt="Значок яркости">
-              </li>
+        <section class="photo-gallery">
+            <h2 class="visually-hidden">Галерея фотографий</h2>
+            <ul class="photo-gallery__list">
+                <li class="photo-gallery__item">
+                    <img class="photo-gallery__image" src="img/">
+                    <div class="photo-gallery__comment comment">
+                        <h3 class="comment__title">Левон<time class="comment__time"></time> (5 часов назад)</h3>
+                        <p class="comment__text">Вчера он на луну летал, сегодня в руки к нам попал.</p>
+                        <button class="comment__like" type="button">Нравится: <span class="comment__like-count">356</span></button>
+                    </div>
+                </li>
+                <li class="photo-gallery__item">
+                    <img class="photo-gallery__image" src="img/">
+                    <div class="photo-gallery__comment comment">
+                        <h3 class="comment__title">Антон<time class="comment__time"></time> (12 часов назад)</h3>
+                        <p class="comment__text">Соседи будут рады!</p>
+                        <button class="comment__like" type="button">Нравится: <span class="comment__like-count">666</span></button>
+                    </div>
+                </li>
+                <li class="photo-gallery__item">
+                    <img class="photo-gallery__image" src="img/">
+                    <div class="photo-gallery__comment comment">
+                        <h3 class="comment__title">Борис<time class="comment__time"></time> (20 часов назад)</h3>
+                        <p class="comment__text">Здесь могла быть ваша цитата о высоком и вечном.</p>
+                        <button class="comment__like" type="button">Нравится: <span class="comment__like-count">215</span></button>
+                    </div>
+                </li>
+                <li class="photo-gallery__item">
+                    <img class="photo-gallery__image" src="img/">
+                    <div class="photo-gallery__comment comment">
+                        <h3 class="comment__title">Сергей<time class="comment__time"></time> (25 часов назад)</h3>
+                        <p class="comment__text">Самая кубанская в мире!</p>
+                        <button class="comment__like" type="button">Нравится: <span class="comment__like-count">4</span></button>
+                    </div>
+                </li>
+                <li class="photo-gallery__item">
+                    <img class="photo-gallery__image" src="img/">
+                    <div class="photo-gallery__comment comment">
+                        <h3 class="comment__title">Максим<time class="comment__time"></time> (40 часов назад)</h3>
+                        <p class="comment__text">Где снег-то?</p>
+                        <button class="comment__like" type="button">Нравится: <span class="comment__like-count">150</span></button>
+                    </div>
+                </li>
+                <li class="photo-gallery__item">
+                    <img class="photo-gallery__image" src="img/">
+                    <div class="photo-gallery__comment comment">
+                        <h3 class="comment__title">Надежда<time class="comment__time"></time> (45 часов назад)</h3>
+                        <p class="comment__text">Всем GM и взаимные лайки!</p>
+                        <button class="comment__like" type="button">Нравится: <span class="comment__like-count">2560</span></button>
+                    </div>
+                </li>
             </ul>
-            <ul class="post__scales-list">
-              <li class="post__scale-item">
-                <div class="post__filter-scale">
-                  <div class="post__filter-bar"></div>
-                  <div class="post__toggle post__toggle--min"></div>
-                  <div class="post__toggle post__toggle--max"></div>
+        </section>
+
+        <section class="post">
+            <h2 class="post__title">Затмите их всех!<br> Выкладывайте все, что накопилось в телефоне!</h2>
+            <div class="post__wrapper">
+                <img class="post__image" src="img/" alt="Загруженное фото">
+                <div class="post__filters-wrapper">
+                    <div class="post__filters-wrapper">
+                        <ul class="post__icons-list">
+                            <li class="post__icons-item">
+                                <img class="post__filter-icon" src="img/" alt="Значок увеличение">
+                            </li>
+                            <li class="post__icons-item">
+                                <img class="post__filter-icon" src="img/" alt="Значок насыщенности">
+                            </li>
+                            <li class="post__icons-item">
+                                <img class="post__filter-icon" src="img/" alt="Значок яркости">
+                            </li>
+                        </ul>
+                        <ul class="post__scales-list">
+                            <li class="post__scale-item">
+                                <div class="post__filter-scale">
+                                    <div class="post__filter-bar"></div>
+                                    <div class="post__toggle post__toggle--min"></div>
+                                    <div class="post__toggle post__toggle--max"></div>
+                                </div>
+                            </li>
+                            <li class="post__scale-item  post__scale-item--hidden">
+                                <div class="post__filter-scale">
+                                    <div class="post__filter-bar"></div>
+                                    <div class="post__toggle post__toggle--min"></div>
+                                    <div class="post__toggle post__toggle--max"></div>
+                                </div>
+                            </li>
+                            <li class="post__scale-item  post__scale-item--hidden">
+                                <div class="post__filter-scale">
+                                    <div class="post__filter-bar"></div>
+                                    <div class="post__toggle post__toggle--min"></div>
+                                    <div class="post__toggle post__toggle--max"></div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="post__buttons">
+                        <button class="post__submit-button" type="button">Запостить</button>
+                        <button class="post__cancel-button" type="button">Отмена</button>
+                    </div>
                 </div>
-              </li>
-              <li class="post__scale-item">
-                <div class="post__filter-scale">
-                  <div class="post__filter-bar"></div>
-                  <div class="post__toggle post__toggle--min"></div>
-                  <div class="post__toggle post__toggle--max"></div>
-                </div>
-              </li>
-              <li class="post__scale-item">
-                <div class="post__filter-scale">
-                  <div class="post__filter-bar"></div>
-                  <div class="post__toggle post__toggle--min"></div>
-                  <div class="post__toggle post__toggle--max"></div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="post__buttons">
-            <button class="post__submit-button" type="button">Запостить</button>
-            <button class="post__cancel-button" type="button">Отмена</button>
-          </div>
-        </div>
-      </section>
+            </div>
+        </section>
     </main>
     <footer class="page-footer">
-      <div class="page-footer__wrapper">
         <a href="" class="page-footer__logo">
-          <img class="page-footer__logo-img" src="img/" alt="Логотип Pink">
+            <img class="page-footer__logo-img" src="img/" alt="Логотип Pink">
         </a>
 
         <ul class="page-footer__social social">
-          <li class="social__item">
-            <a href="#" class="social__link">
-              <span class="visually-hidden">Инстаграм</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a href="#" class="social__link">
-              <span class="visually-hidden">Фейсбук</span>
-            </a>
-          </li>
-          <li class="social__item">
-            <a href="#" class="social__link">
-              <span class="visually-hidden">Ютуб</span>
-            </a>
-          </li>
+            <li class="social__item">
+                <a href="#" class="social__link">
+                    <span class="visually-hidden">Инстаграм</span>
+                </a>
+            </li>
+            <li class="social__item">
+                <a href="#" class="social__link">
+                    <span class="visually-hidden">Фейсбук</span>
+                </a>
+            </li>
+            <li class="social__item">
+                <a href="#" class="social__link">
+                    <span class="visually-hidden">Ютуб</span>
+                </a>
+            </li>
         </ul>
 
         <div class="page-footer__copyright copyright">
-          <b class="copyright__text"></b>
-          <img class="copyright__images" src="img/" alt="Логотип HTML Academy">
+            <b class="copyright__text"></b>
+            <img class="copyright__images" src="img/" alt="Логотип HTML Academy">
         </div>
-      </div>
     </footer>
+    <script src="js/script.min.js"></script>
   </body>
 </html>

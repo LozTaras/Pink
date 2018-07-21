@@ -1,0 +1,17 @@
+.research {
+    display: none;
+}
+
+@media (min-width: $tablet-width) {
+
+    .research {
+        display: block;
+    }
+}
+
+@media (min-width: $desktop-width) {
+
+    .research {
+        @include desktop-positionner;
+    }
+}

@@ -1,0 +1,31 @@
+.post {
+    @include mobile-positionner;
+
+    &__scale-item {
+
+        &--hidden {
+            display: none;
+        }
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .post {
+        &__wrapper {
+            @include flex-sb;
+        }
+
+        &__scale-item {
+
+            &--hidden {
+                display: list-item;
+            }
+        }
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .post {
+        @include desktop-positionner;
+    }
+}

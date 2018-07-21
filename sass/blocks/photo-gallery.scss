@@ -1,0 +1,32 @@
+.photo-gallery {
+    @include mobile-positionner;
+
+    &__item {
+        width: 100%;
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .photo-gallery {
+
+        &__list {
+            @include flex-sb;
+            @include reset-list;
+            flex-wrap: wrap;
+        }
+
+        &__item {
+            width: 45%;
+        }
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .photo-gallery {
+        @include desktop-positionner;
+
+        &__item {
+            width: 30%;
+        }
+    }
+}
