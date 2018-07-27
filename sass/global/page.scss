@@ -9,9 +9,9 @@ html {
 body {
     @include reset;
     font-family: "Open Sans", "Arial", sans-serif;
-    font-size: 18px;
-    line-height: 30px;
-    color: #283645;
+    font-size: 14px;
+    line-height: 24px;
+    color: $main-color;
     font-weight: 400;
 }
 
@@ -29,4 +29,11 @@ img {
     margin: -1px;
 
     clip: rect(0, 0, 0, 0);
+}
+
+@media (min-width: $desktop-width) {
+    body {
+        font-size: 18px;
+        line-height: 30px;
+    }
 }

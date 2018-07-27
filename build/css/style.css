@@ -335,8 +335,8 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Open Sans", "Arial", sans-serif;
-  font-size: 18px;
-  line-height: 30px;
+  font-size: 14px;
+  line-height: 24px;
   color: #283645;
   font-weight: 400; }
 
@@ -352,31 +352,355 @@ img {
   margin: -1px;
   clip: rect(0, 0, 0, 0); }
 
-.page-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  min-width: 320px;
-  padding: 0 20px; }
+@media (min-width: 960px) {
+  body {
+    font-size: 18px;
+    line-height: 30px; } }
 
-@media (min-width: 1000px) {
-  .page-header {
-    width: 960px;
+.page-header {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-image: url("../img/bg-back-mobile@1x.jpg");
+  background-repeat: no-repeat;
+  background-position: center 0px; }
+  .page-header__wrapper::after {
+    content: '';
+    display: block;
+    width: 320px;
+    height: 395px;
     margin: 0 auto;
-    padding: 0 10px; } }
+    background-image: url("../img/iphone-hand-mobile@1x.png");
+    background-repeat: no-repeat;
+    background-position: bottom left; }
+  .page-header__inner-wrapper {
+    min-width: 320px;
+    padding: 0 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding-top: 23px;
+    padding-bottom: 14px;
+    background-color: rgba(0, 0, 0, 0.3); }
+    .page-header__inner-wrapper--open {
+      padding-bottom: 13px;
+      background-color: #283645;
+      border-bottom: 1px solid #000000; }
+      .page-header__inner-wrapper--open .page-header__toggle {
+        width: 28px;
+        height: 28px; }
+        .page-header__inner-wrapper--open .page-header__toggle::before {
+          top: 12px;
+          left: 0;
+          width: 28px;
+          -webkit-box-shadow: none;
+                  box-shadow: none;
+          border-radius: 2px;
+          -webkit-transform: rotate(-45deg);
+                  transform: rotate(-45deg); }
+        .page-header__inner-wrapper--open .page-header__toggle::after {
+          content: '';
+          position: absolute;
+          top: 12px;
+          left: 0;
+          height: 4px;
+          width: 28px;
+          background: #ffffff;
+          border-radius: 2px;
+          -webkit-box-shadow: none;
+                  box-shadow: none;
+          -webkit-transform: rotate(45deg);
+                  transform: rotate(45deg); }
+        .page-header__inner-wrapper--open .page-header__toggle:hover::after, .page-header__inner-wrapper--open .page-header__toggle:hover::before {
+          background: #d22856;
+          -webkit-box-shadow: none;
+                  box-shadow: none; }
+      .page-header__inner-wrapper--open .page-header__main-nav {
+        opacity: 1;
+        clip: rect(auto, auto, 400px, auto); }
+  .page-header__toggle {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 50px;
+    height: 28px;
+    margin-left: auto;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    outline: none; }
+    .page-header__toggle::before {
+      content: '';
+      position: absolute;
+      top: 35%;
+      left: 0;
+      height: 4px;
+      width: 50px;
+      background: #ffffff;
+      -webkit-box-shadow: 0 10px 0 0 #ffffff, 0 -10px 0 0 #ffffff;
+              box-shadow: 0 10px 0 0 #ffffff, 0 -10px 0 0 #ffffff; }
+    .page-header__toggle:hover::before {
+      background: #d22856;
+      -webkit-box-shadow: 0 10px 0 0 #d22856, 0 -10px 0 0 #d22856;
+              box-shadow: 0 10px 0 0 #d22856, 0 -10px 0 0 #d22856; }
+    .page-header__toggle:active::before {
+      opacity: 0.3; }
+  .page-header__main-nav {
+    position: absolute;
+    top: 67px;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    opacity: 0;
+    clip: rect(auto, auto, 0px, auto);
+    -webkit-transition: clip 0.4s;
+    transition: clip 0.4s; }
+  .page-header__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%; }
+  .page-header__item:hover:not(.page-header__item--active) .page-header__link {
+    color: #d22856; }
+  .page-header__item:active:not(.page-header__item--active) .page-header__link {
+    color: #ffffff;
+    opacity: 0.3; }
+  .page-header__item--active .page-header__link {
+    cursor: default;
+    color: rgba(255, 255, 255, 0.5); }
+  .page-header__link {
+    width: 100%;
+    padding: 15px 10px;
+    display: block;
+    color: #ffffff;
+    line-height: 32px;
+    text-decoration: none;
+    border-bottom: 1px solid #000000;
+    border-top: 1px solid #485461;
+    text-align: center;
+    background-color: #283645; }
+
+@media (min-width: 660px) {
+  .page-header {
+    background-image: url("../img/bg-back-tablet@1x.jpg"); }
+    .page-header__wrapper {
+      padding-bottom: 35px;
+      margin-bottom: 20px; }
+      .page-header__wrapper::after {
+        position: absolute;
+        z-index: 0;
+        left: calc(50% - 330px);
+        width: 660px;
+        height: 620px;
+        margin-top: -2px;
+        background-image: url("../img/iphone-hand-tablet@1x.png");
+        background-position: center bottom; }
+    .page-header__inner-wrapper {
+      padding-top: 27px;
+      padding-bottom: 37px; }
+      .page-header__inner-wrapper--open {
+        padding-bottom: 36px; }
+    .page-header__toggle {
+      margin-top: 17px; }
+    .page-header__main-nav {
+      top: 109px; } }
+
+@media (min-width: 960px) {
+  .page-header {
+    background-image: url("../img/bg-back-desktop@1x.jpg");
+    background-position: center 0; }
+    .page-header__wrapper {
+      width: 100%;
+      padding-top: 38px;
+      padding-bottom: 32px;
+      background-color: rgba(0, 0, 0, 0.3); }
+      .page-header__wrapper::after {
+        left: calc(50% - 480px);
+        width: 960px;
+        height: 776px;
+        margin-top: -12px;
+        background-image: url("../img/iphone-hand-desktop@1x.png");
+        background-position: -29% 100%; }
+    .page-header__inner-wrapper {
+      width: 960px;
+      margin: 0 auto;
+      padding: 0 10px;
+      background-color: transparent; }
+      .page-header__inner-wrapper--open {
+        border-bottom: none; }
+    .page-header__toggle {
+      display: none; }
+    .page-header__main-nav {
+      position: static;
+      opacity: 1; }
+    .page-header__list {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      width: 620px;
+      padding-top: 3px; }
+    .page-header__item {
+      position: relative; }
+      .page-header__item--active::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #ffffff; }
+      .page-header__item--active .page-header__link {
+        color: #ffffff; }
+    .page-header__link {
+      width: auto;
+      padding: 15px 0;
+      color: #ffffff;
+      line-height: 18px;
+      border: none;
+      background-color: transparent; }
+    .page-header__pos-wrapper {
+      width: 960px;
+      margin: 0 auto;
+      padding: 0 10px; } }
+
+.logo__svg {
+  margin-top: -17px;
+  margin-left: -72px; }
+
+.logo__star-glasses {
+  display: none; }
+
+.logo__glasses {
+  display: none; }
+
+.logo:hover path, .logo:focus path {
+  fill: #d22856; }
+
+.logo:active path {
+  fill: #ffffff;
+  opacity: 0.3; }
+
+@media (min-width: 660px) {
+  .logo__svg {
+    margin-top: 0;
+    margin-left: 0; }
+  .logo__glasses {
+    display: block; } }
+
+@media (min-width: 960px) {
+  .logo__star-glasses {
+    display: block; }
+  .logo__glasses {
+    display: none; } }
+
+.download-app {
+  min-width: 320px;
+  padding: 0 20px;
+  padding-top: 29px;
+  padding-bottom: 30px;
+  background: #1d2631; }
+  .download-app__slogan {
+    display: none; }
+  .download-app__download-link {
+    display: block;
+    max-width: 350px;
+    padding: 13px 15px;
+    margin: 0 auto;
+    margin-bottom: 36px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border: 3px solid #ffffff;
+    border-radius: 100px; }
+    .download-app__download-link:hover {
+      background-color: #ffffff;
+      color: #d22856;
+      -webkit-transition: all 0.4s;
+      transition: all 0.4s; }
+  .download-app__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 450px;
+    padding: 0 37px;
+    margin: 0 auto;
+    margin-bottom: 10px; }
+  .download-app__item--top {
+    -ms-flex-item-align: end;
+        align-self: flex-end; }
+  .download-app__desc {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    text-align: center; }
+
+@media (min-width: 660px) {
+  .download-app {
+    position: relative;
+    z-index: 1;
+    width: 302px;
+    padding-top: 38px;
+    padding-right: 0;
+    padding-bottom: 109px;
+    background: transparent; }
+    .download-app__slogan {
+      display: block;
+      margin-bottom: 30px;
+      color: #ffffff;
+      font-size: 40px;
+      line-height: 48px;
+      font-weight: 300;
+      text-align: center; }
+    .download-app__download-link {
+      margin-bottom: 47px; }
+    .download-app__list {
+      padding: 0 48px;
+      margin-bottom: 27px; }
+    .download-app__desc {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 300; } }
+
+@media (min-width: 960px) {
+  .download-app {
+    padding-top: 88px;
+    padding-bottom: 111px;
+    padding-left: 0;
+    padding-right: 20px; }
+    .download-app__slogan {
+      margin-bottom: 52px;
+      font-size: 50px;
+      line-height: 60px; }
+    .download-app__download-link {
+      padding: 15px 15px;
+      margin-bottom: 70px;
+      font-size: 21px;
+      line-height: 18px; }
+    .download-app__list {
+      margin-bottom: 44px; } }
 
 .features {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   min-width: 320px;
   padding: 0 20px; }
   .features__list {
@@ -390,7 +714,7 @@ img {
   .features__desc {
     text-align: center; }
 
-@media (min-width: 620px) {
+@media (min-width: 660px) {
   .features__list {
     margin-left: 310px; }
   .features__title {
@@ -398,7 +722,7 @@ img {
   .features__desc {
     text-align: left; } }
 
-@media (min-width: 1000px) {
+@media (min-width: 960px) {
   .features__list {
     width: 960px;
     margin: 0 auto;
@@ -417,24 +741,17 @@ img {
 .research {
   display: none; }
 
-@media (min-width: 620px) {
+@media (min-width: 660px) {
   .research {
     display: block; } }
 
-@media (min-width: 1000px) {
+@media (min-width: 960px) {
   .research {
     width: 960px;
     margin: 0 auto;
     padding: 0 10px; } }
 
 .rates {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   min-width: 320px;
   padding: 0 20px;
   width: 100%;
@@ -450,7 +767,7 @@ img {
     .rates__cell--empty {
       border: none; }
 
-@media (min-width: 620px) {
+@media (min-width: 660px) {
   .rates__list {
     width: 100%;
     margin-left: 0; }
@@ -461,20 +778,13 @@ img {
   .rates__slider-controls {
     display: none; } }
 
-@media (min-width: 1000px) {
+@media (min-width: 960px) {
   .rates {
     width: 960px;
     margin: 0 auto;
     padding: 0 10px; } }
 
 .reviews {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   min-width: 320px;
   padding: 0 20px;
   width: 100%; }
@@ -504,7 +814,7 @@ img {
   .reviews__button {
     display: none; }
 
-@media (min-width: 1000px) {
+@media (min-width: 960px) {
   .reviews {
     width: 960px;
     margin: 0 auto;
@@ -515,13 +825,6 @@ img {
       display: none; } }
 
 .contact-us {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   min-width: 320px;
   padding: 0 20px; }
   .contact-us__list {
@@ -533,7 +836,7 @@ img {
   .contact-us__info {
     text-align: center; }
 
-@media (min-width: 620px) {
+@media (min-width: 660px) {
   .contact-us__list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -546,7 +849,7 @@ img {
   .contact-us__item {
     width: 50%; } }
 
-@media (min-width: 1000px) {
+@media (min-width: 960px) {
   .contact-us__list {
     width: 960px;
     margin: 0 auto;
@@ -557,7 +860,7 @@ img {
 .page-footer {
   display: none; }
 
-@media (min-width: 620px) {
+@media (min-width: 660px) {
   .page-footer {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -566,20 +869,13 @@ img {
         -ms-flex-pack: justify;
             justify-content: space-between; } }
 
-@media (min-width: 1000px) {
+@media (min-width: 960px) {
   .page-footer {
     width: 960px;
     margin: 0 auto;
     padding: 0 10px; } }
 
 .form {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   min-width: 320px;
   padding: 0 20px; }
   .form__text-wrapper {
@@ -595,7 +891,7 @@ img {
   .form__contact-info {
     display: none; }
 
-@media (min-width: 620px) {
+@media (min-width: 660px) {
   .form__fields {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -635,7 +931,7 @@ img {
         -ms-flex-positive: 1;
             flex-grow: 1; } }
 
-@media (min-width: 1000px) {
+@media (min-width: 960px) {
   .form {
     width: 960px;
     margin: 0 auto;
@@ -646,36 +942,22 @@ img {
       width: 40%; } }
 
 .panorama {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   min-width: 320px;
   padding: 0 20px; }
 
-@media (min-width: 1000px) {
+@media (min-width: 960px) {
   .panorama {
     width: 960px;
     margin: 0 auto;
     padding: 0 10px; } }
 
 .photo-gallery {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   min-width: 320px;
   padding: 0 20px; }
   .photo-gallery__item {
     width: 100%; }
 
-@media (min-width: 620px) {
+@media (min-width: 660px) {
   .photo-gallery__list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -691,7 +973,7 @@ img {
   .photo-gallery__item {
     width: 45%; } }
 
-@media (min-width: 1000px) {
+@media (min-width: 960px) {
   .photo-gallery {
     width: 960px;
     margin: 0 auto;
@@ -700,19 +982,12 @@ img {
       width: 30%; } }
 
 .post {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
   min-width: 320px;
   padding: 0 20px; }
   .post__scale-item--hidden {
     display: none; }
 
-@media (min-width: 620px) {
+@media (min-width: 660px) {
   .post__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -723,7 +998,7 @@ img {
   .post__scale-item--hidden {
     display: list-item; } }
 
-@media (min-width: 1000px) {
+@media (min-width: 960px) {
   .post {
     width: 960px;
     margin: 0 auto;
