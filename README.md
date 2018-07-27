@@ -4,12 +4,12 @@
 
 Использлваные технологии:
 
-HTML
-CSS
-Адаптивная верстка
-Резиновая верстка
-SASS
-JavaScript
-Gulp
+ - HTML
+ - CSS
+ - Адаптивная верстка
+ - Резиновая верстка
+ - SASS
+ - JavaScript
+ - Gulp
 
 Силка на хостинг: https://loztaras.github.io/Pink/
