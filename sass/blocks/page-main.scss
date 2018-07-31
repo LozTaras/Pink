@@ -1,0 +1,24 @@
+.page-main {
+
+    &__reviews {
+        margin-bottom: 42px;
+    }
+}
+
+@media (min-width: $tablet-width) {
+    .page-main {
+
+        &__reviews {
+            margin-bottom: 19px;
+        }
+    }
+}
+
+@media (min-width: $desktop-width) {
+    .page-main {
+
+        &__reviews {
+            margin-bottom: -17px;
+        }
+    }
+}

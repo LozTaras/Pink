@@ -3,13 +3,128 @@
 }
 
 @media (min-width: $tablet-width) {
+
     .page-footer {
         @include flex-sb;
+
+        padding-top: 37px;
+        padding-left: 20px;
+        padding-right: 13px;
+        padding-bottom: 38px;
+
+        &__copyright-link {
+            @include flex-sb;
+
+            width: 137px;
+            align-items: center;
+
+            text-decoration: none;
+
+            &:hover {
+                path {
+                    fill: $main-color;
+                }
+            }
+
+            &:active {
+                svg {
+                    opacity: 0.3;
+                }
+            }
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 58px;
+            color: $main-color;
+            font-weight: 400;
+            text-decoration: none;
+        }
+
+    &__logo {
+
+        &:hover {
+
+                path {
+                    fill: $pink;
+                }
+            }
+
+        &:active {
+            .logo__main--black {
+
+                path {
+                    fill: $main-color;
+                }
+            }
+            opacity: 0.3;
+        }
+    }
+}
+
+    .social {
+        @include reset-list;
+        @include flex-sb;
+
+        width: 196px;
+        padding-right: 20px;
+        padding-top: 3px;
+
+        &__link {
+            display: block;
+            width: 50px;
+            height: 50px;
+
+            border: 3px solid #e9ebec;
+            border-radius: 50%;
+            background: url('../img/icon-twitter.svg') no-repeat 50% 50%;
+
+            &--fb {
+                background: url('../img/icon-facebook.svg') no-repeat 50% 50%;
+            }
+
+            &--yt {
+                background: url('../img/icon-youtube.svg') no-repeat 50% 50%;
+            }
+
+            &:hover {
+                border: 3px solid $main-color;
+            }
+
+            &:active {
+                opacity: 0.3;
+            }
+        }
     }
 }
 
 @media (min-width: $desktop-width) {
     .page-footer {
         @include desktop-positionner;
+
+        padding-top: 71px;
+        padding-bottom: 67px;
+        padding-right: 3px;
+
+        &__link {
+            padding-top: 5px;
+            padding-bottom: 0;
+        }
+
+        &__text {
+            font-size: 18px;
+            line-height: 58px;
+      }
+
+      &__copyright-link {
+          width: 160px;
+      }
+    }
+
+    .social {
+        width: 224px;
+        padding-top: 3px;
+        padding-bottom: 0;
+        padding-left: 27px;
     }
 }

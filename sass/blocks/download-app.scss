@@ -31,6 +31,10 @@
             color: $pink;
             transition: all 0.4s;
         }
+
+        &:active {
+            color: rgba(210, 40, 84, 0.3);
+        }
     }
 
     &__list {

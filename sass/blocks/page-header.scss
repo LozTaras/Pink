@@ -76,6 +76,13 @@
                         box-shadow: none;
                     }
                 }
+
+                &:active {
+                    &::after,
+                    &::before {
+                        opacity: 0.3;
+                    }
+                }
             }
 
             .page-header__main-nav {
@@ -221,7 +228,7 @@
         }
 
         &__main-nav {
-            top: 109px;
+            top: 111px;
         }
     }
 }

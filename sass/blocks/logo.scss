@@ -5,6 +5,16 @@
         margin-left: -72px;
     }
 
+    &__main {
+
+        &--black {
+
+            path {
+                fill: $main-color;
+            }
+        }
+    }
+
     &__star-glasses {
         display: none;
     }
@@ -39,14 +49,29 @@
 
         &__glasses {
             display: block;
+
+            &--black {
+
+                path {
+                    fill: $pink;
+                }
+            }
         }
     }
 }
 
 @media (min-width: $desktop-width) {
     .logo {
+
         &__star-glasses {
             display: block;
+
+            &--pink {
+
+                path:not(.logo__star) {
+                    fill: $pink;
+                }
+            }
         }
 
         &__glasses {

@@ -1,41 +1,221 @@
 .rates {
-    @include mobile-positionner;
-    width: 100%;
     overflow: hidden;
+
+    width: 100%;
+    padding-top: 91px;
+    padding-bottom: 50px;
+
+    background: $ligth-grey url('../img/bg-triangle-white.svg') no-repeat top;
+    background-size: 100% 23px;
+
+    &__wrapper {
+        @include mobile-positionner;
+
+        margin-bottom: 41px;
+    }
 
     &__list {
         width: 300%;
         margin-left: -100%;
+
+        border-spacing: 0;
+        transition: margin 1s;
     }
 
     &__cell {
+        position: relative;
         width: 33%;
+
+        background: $white;
         border: 1px solid #e5e5e5;
 
-        &--feature,  &--empty {
-            display: none;
-        }
+       &--hit {
+           &::before {
+               content: '';
 
-        &--empty {
-           border: none;
+               position: absolute;
+               top: 0;
+               left: -2px;
+
+               width: 74px;
+               height: 73px;
+
+               background: url('../img/bg-hit.svg') no-repeat top left;
+               background-size: 74px 73px;
+           }
+
+           &::after {
+               content: 'ХИТ';
+
+               position: absolute;
+               top: 12px;
+               left: 10px;
+
+               font-size: 14px;
+               line-height: 30px;
+               color: $white;
+               font-weight: 400;
+
+               transform: rotate(-45deg);
+           }
        }
+
+       &::after {
+           content: url('../img/icon-no.svg');
+
+           width: 28px;
+           height: 28px;
+
+           position: absolute;
+           top: 15px;
+           right: 17px;
+       }
+
+       &--checked {
+           &::after {
+               content: url('../img/icon-yes.svg');
+
+               width: 28px;
+               height: 28px;
+
+               top: 17px;
+           }
+       }
+
+       &--feature {
+           display: none;
+       }
+    }
+
+    &__cell-name {
+        position: relative;
+        width: 33%;
+        padding-top: 16px;
+        padding-bottom: 20px;
+
+        background-color: $main-color;
+        border: 2px solid #e5e5e5;
+        border-bottom: none;
+        border-top: none;
+    }
+
+    &__cell-empty {
+        display: none;
+    }
+
+    &__name {
+        @include reset;
+
+        margin-bottom: 2px;
+
+        color: $white;
+        font-size: 18px;
+        line-height: 30px;
+        text-transform: uppercase;
+    }
+
+    &__price {
+        @include reset;
+
+        color: $white;
+        font-size: 24px;
+        line-height: 30px;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        display: block;
+        padding: 13px 21px;
+
+        font-size: 14px;
+        line-height: 30px;
+        text-transform: uppercase;
     }
 }
 
 @media (min-width: $tablet-width) {
 
     .rates {
+        background-size: 100% 53px;
+        padding-top: 89px;
+        padding-bottom: 30px;
+
+        &__text {
+            display: none;
+        }
+
         &__list {
             width: 100%;
             margin-left: 0;
         }
 
         &__cell {
+            padding: 10px;
             width: 25%;
 
-            &--feature,  &--empty {
-                display: table-cell;
+            text-transform: none;
+
+            &--hit {
+                &::after {
+                    top: 4px;
+                    left: 7px;
+                }
+
+                &::before {
+                    left: 0;
+
+                    background: url('../img/bg-hit-tablet.svg') no-repeat top left;
+                }
             }
+
+            &--feature {
+                display: table-cell;
+
+                padding-left: 16px;
+                padding-top: 9px;
+                padding-bottom: 11px;
+
+                &::after {
+                    content: '';
+                }
+            }
+
+            &::after {
+                top:auto;
+                bottom: 6px;
+                left: calc(50% - 15px);
+            }
+        }
+
+        &__cell-name {
+            width: 25%;
+            padding-top: 12px;
+            padding-bottom: 10px;
+        }
+
+        &__cell-empty {
+            display: table-cell;
+
+            &::after {
+                content: '';
+            }
+        }
+
+        &__cell-empty {
+            border: none;
+        }
+
+        &__name {
+            margin-bottom: -3px;
+
+            font-size: 16px;
+            line-height: 30px;
+        }
+
+        &__price {
+            font-size: 18px;
+            line-height: 30px;
         }
 
         &__slider-controls {
@@ -48,6 +228,55 @@
 @media (min-width: $desktop-width) {
 
     .rates {
-        @include desktop-positionner;
+        padding-top: 172px;
+        padding-bottom: 54px;
+
+        background-size: 100% 129px;
+
+        &__list {
+            @include desktop-positionner;
+        }
+
+        &__cell {
+            &--hit {
+                &::after {
+                    top: 12px;
+                    left: 10px;
+                }
+
+                &::before {
+                    background: url('../img/bg-hit.svg') no-repeat top left;
+                }
+            }
+
+            &--feature {
+                padding-left: 22px;
+                padding-top: 13px;
+                padding-bottom: 16px;
+            }
+
+            &::after {
+                bottom: 12px;
+                left: calc(50% - 12px);
+            }
+        }
+
+        &__cell-name {
+            padding-top: 16px;
+            padding-bottom: 20px;
+            border-radius: 4px;
+        }
+
+        &__name {
+            margin-bottom: 2px;
+
+            font-size: 18px;
+            line-height: 30px;
+        }
+
+        &__price {
+            font-size: 24px;
+            line-height: 30px;
+        }
     }
 }

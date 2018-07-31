@@ -3,15 +3,115 @@
 }
 
 @media (min-width: $tablet-width) {
-
     .research {
         display: block;
+
+        &__wrapper {
+            @include mobile-positionner;
+
+            position: relative;
+
+            padding-left: 329px;
+            padding-top: 97px;
+            padding-right: 35px;
+            padding-bottom: 113px;
+
+            &::before {
+                content: '24';
+
+                position: absolute;
+                top: 116px;
+                left: 39px;
+                z-index: 2;
+
+                display: block;
+                width: 201px;
+                height: 201px;
+
+                color: $pink;
+                font-size: 96px;
+                line-height: 168px;
+                font-weight: 700;
+                text-align: center;
+
+                border: 12px solid $pink;
+                border-radius: 50%;
+            }
+        }
+
+        &__svg {
+            position: absolute;
+            top: 61px;
+            left: -3px;
+            z-index: 0;
+
+            width: 286px;
+            height: 276px;
+        }
+
+        &__slogan {
+            display: block;
+            margin-bottom: 10px;
+
+            color: $black;
+            font-size: 30px;
+            line-height: 36px;
+            font-weight: 700;
+        }
+
+        &__desc {
+            @include reset;
+
+            min-height: 96px;
+            margin-bottom: 11px;
+        }
+
+        &__link {
+            color: $pink;
+        }
     }
 }
 
 @media (min-width: $desktop-width) {
 
     .research {
-        @include desktop-positionner;
+        background: $ligth-grey;
+
+        &__wrapper {
+            @include desktop-positionner;
+
+            padding-top: 118px;
+            padding-left: 377px;
+            padding-bottom: 113px;
+
+            &::before {
+                top: 96px;
+                left: 32px;
+
+                width: 254px;
+                height: 254px;
+
+                font-size: 120px;
+                line-height: 207px;
+
+                border: 16px solid $pink;
+            }
+        }
+
+        &__svg {
+            top: 28px;
+            left: 11px;
+
+            width: 298px;
+            height: 345px;
+        }
+
+        &__slogan {
+            margin-bottom: 21px;
+        }
+
+        &__desc {
+            margin-bottom: 25px;
+        }
     }
 }

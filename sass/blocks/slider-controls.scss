@@ -1,0 +1,42 @@
+.slider-controls {
+    @include reset-list;
+    @include flex-sb;
+    align-items: center;
+
+    width: 63px;
+    margin: 0 auto;
+    padding-right: 4px;
+
+    &__toggle {
+        @include reset;
+
+        display: block;
+        width: 6px;
+        height: 6px;
+
+        background: $slider-grey;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &:hover {
+            background: #7e868f;
+        }
+
+        &:active {
+            background: #e9ebec;
+        }
+
+        &--active {
+            width: 12px;
+            height: 12px;
+
+            background-color: $white;
+            border: 3px solid $main-color;
+
+            &:hover {
+                background: $white;
+            }
+        }
+    }
+}
