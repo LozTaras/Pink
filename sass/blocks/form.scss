@@ -1,5 +1,213 @@
 .form {
-    @include mobile-positionner;
+    padding-top: 45px;
+
+    &__text {
+        @include reset;
+        @include mobile-positionner;
+
+        margin-bottom: 34px;
+
+        line-height: 30px;
+        text-align: center;
+
+        span {
+            display: none;
+        }
+    }
+
+    &__text-wrapper {
+        @include reset;
+
+        &--personal-info {
+            padding-bottom: 25px;
+        }
+
+        &--attainment {
+            background-color: $ligth-grey;
+        }
+
+        &--personal-contact {
+            padding-top: 32px;
+            padding-bottom: 25px;
+        }
+
+        &--plarform {
+            background-color: $ligth-grey;
+
+            .form__title {
+                padding-bottom: 39px;
+            }
+
+            .form__toggle-wrapper {
+                margin-bottom: 45px;
+            }
+        }
+
+        &--review {
+            margin-bottom: 31px;
+
+            .form__title {
+                padding-bottom: 16px;
+
+                background-color: $white;
+            }
+
+            .form__text-field {
+                padding: 14px 19px;
+            }
+        }
+    }
+
+    &__field-wrapper {
+        @include reset;
+        @include mobile-positionner;
+
+        margin-bottom: 17px;
+    }
+
+    &__toggle-wrapper {
+        @include reset;
+        @include mobile-positionner;
+
+        margin-bottom: 52px;
+    }
+
+    &__toggle-wrapper:last-child {
+        margin-bottom: 47px;
+    }
+
+    &__title {
+        @include reset;
+        @include mobile-positionner;
+
+        display: block;
+        padding-top: 38px;
+        padding-bottom: 43px;
+        width: 100%;
+
+        font-size: 14px;
+        line-height: 18px;
+        color: $pink;
+        text-transform: uppercase;
+        text-align: center;
+
+        background-color: $ligth-grey;
+
+        &--contact-info {
+            display: none;
+        }
+    }
+
+    &__field-title {
+        display: block;
+        padding-left: 22px;
+        margin-bottom: 6px;
+
+        font-size: 14px;
+        line-height: 30px;
+        text-transform: uppercase;
+        color: $pink;
+    }
+
+    &__text-field {
+        padding: 14px 20px;
+
+        font-size: 18px;
+        line-height: 30px;
+
+        border: 2px solid $field-border;
+        border-radius: 3px;
+        outline: none;
+
+        &::placeholder {
+            font-size: 18px;
+            line-height: 30px;
+            color: $main-color;
+        }
+
+        &:hover {
+            border: 2px solid $main-color;
+        }
+
+        &:focus {
+            border: 2px solid $pink;
+        }
+
+        &--review {
+            min-height: 200px;
+        }
+    }
+
+    &__toggle {
+        display: none;
+
+        &:checked + .form__toggle-title {
+            &::after {
+                content: url('../img/icon-check.svg');
+
+                position: absolute;
+                top: -2px;
+                left: 9px;
+            }
+        }
+
+        &:checked + .form__toggle-title--radio {
+            &::after {
+                content: '';
+
+                position: absolute;
+                top: 5px;
+                left: 12px;
+
+                width: 15px;
+                height: 15px;
+
+                border-radius: 50%;
+                background-color: $pink;
+            }
+        }
+    }
+
+    &__toggle-title {
+        position: relative;
+
+        padding-left: 69px;
+
+        font-size: 18px;
+        line-height: 30px;
+        cursor: pointer;
+        outline: none;
+
+        &::before {
+            content: '';
+
+            position: absolute;
+            bottom: -9px;
+            left: 0;
+
+            display: block;
+            width: 40px;
+            height: 40px;
+
+            border: 2px solid $field-border;
+            background-color: $white;
+            border-radius: 2px;
+        }
+
+        &--radio {
+            &::before {
+                border-radius: 50%;
+            }
+        }
+
+        &:hover::before {
+            border: 2px solid $main-color;
+        }
+
+        &:active::before {
+            border: 2px solid $pink;
+        }
+    }
 
     &__text-wrapper {
         border: none;
@@ -10,13 +218,75 @@
         flex-direction: column;
     }
 
-    &__contact-info {
-        display: none;
+    &__submit-title {
+        @include mobile-positionner;
+    }
+
+    &__submit-button {
+        display: block;
+        width: 100%;
+        margin: 0;
+        padding: 16px 20px;
+        margin-bottom: 36px;
+
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 700;
+        color: $white;
+        text-transform: uppercase;
+
+        background-color: $green;
+        border-radius: 3px;
+        border: none;
+
+        &:hover {
+            background-color: #1c9b5e;
+        }
+
+        &:active {
+            color: rgba(255, 255, 255, 0.3);
+        }
+    }
+
+    &__mandatory-field {
+        @include reset;
+        margin-bottom: 55px;
+
+        text-align: center;
+        line-height: 30px;
+        text-transform: uppercase;
+
+        span {
+            display: none;
+        }
+    }
+
+    &__red-star {
+        color: $pink;
     }
 }
 
 @media (min-width: $tablet-width) {
     .form {
+        @include mobile-positionner;
+
+        padding-top: 92px;
+
+        &__text {
+            margin-bottom: 72px;
+
+            font-size: 18px;
+
+            span {
+                display: block;
+            }
+        }
+
+        &__field-title {
+            padding-left: 0;
+            padding-right: 19px;
+            padding-top: 7px;
+        }
 
         &__fields {
             display: flex;
@@ -27,22 +297,162 @@
         &__text-wrapper {
             width: 100%;
 
+            border-radius: 3px;
+
             &--personal-info {
                 order: -3;
+                padding-bottom: 0;
             }
 
             &--plarform {
                 order: -2;
+                padding: 0 48px;
+                padding-bottom: 12px;
+                margin-bottom: 19px;
+
+                background-color: $white;
+                border: 2px solid $field-border;
+
+                .form__title {
+                    padding-bottom: 47px;
+                    padding-top: 47px;
+                }
             }
 
             &--personal-contact {
                 order: -1;
+                padding: 0 58px;
+                margin-bottom: 8px;
+
+                border: 2px solid $field-border;
+
+                .form__field-wrapper {
+                    position: relative;
+
+                    flex-direction: column-reverse;
+                    align-items: flex-start;
+                    margin-bottom: 23px;
+
+                    &:last-child {
+                        margin-bottom: 21px;
+                    }
+
+                    &::after {
+                        content: '';
+
+                        position: absolute;
+                        top: 2px;
+                        right: 2px;
+
+                        display: block;
+                        width: 58px;
+                        height: 58px;
+
+                        background: $field-border url('../img/icon-phone.svg') no-repeat center;
+                    }
+
+                    &--phone {
+                        &::after {
+                            background: $field-border url('../img/icon-mail.svg') no-repeat center;
+                        }
+                    }
+                }
+
+                .form__text-field {
+                    width: 100%;
+
+                    padding-right: 80px;
+                }
+
+                .form__field-title {
+                    padding-top: 10px;
+                    padding-left: 19px;
+                }
+            }
+
+            &--attainment {
+                padding: 0 48px;
+                padding-bottom: 6px;
+                margin-bottom: 20px;
+
+                border: 2px solid $field-border;
+                background-color: $white;
+
+                .form__title {
+                    padding-top: 49px;
+                    padding-bottom: 48px;
+                }
+            }
+
+            &--review {
+                padding: 0 58px;
+                padding-bottom: 39px;
+                margin-bottom: 68px;
+
+                border: 2px solid $field-border;
+
+                .form__title {
+                    padding-top: 37px;
+                    padding-bottom: 37px;
+                }
+
+                .form__text-field--review {
+                    min-height: 193px;
+                }
+            }
+        }
+
+        &__toggle {
+
+            &:checked + .form__toggle-title::after {
+                left: 18px;
+            }
+        }
+
+        &__toggle-wrapper {
+            padding: 0;
+        }
+
+        &__field-wrapper {
+            padding: 0;
+
+            &:last-child {
+                margin-bottom: 12px;
+            }
+        }
+
+        &__title {
+            width: auto;
+
+            background-color: $white;
+
+            &--contact-info {
+                display: block;
+                padding-top: 38px;
+                padding-bottom: 38px;
+
+            }
+        }
+
+        &__toggle:checked + .form__toggle-title--radio {
+
+            &::after {
+                left: 22px;
+            }
+        }
+
+        &__toggle-title {
+
+            &::before {
+                left: 10px;
             }
         }
 
         &__field-wrapper {
             display: flex;
             flex-direction: row;
+            align-items: center;
+            margin-bottom: 53px;
         }
 
         &__contact-info {
@@ -52,6 +462,25 @@
         &__text-field {
             flex-grow: 1;
         }
+
+        &__submit-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+            margin-bottom: 49px;
+        }
+
+        &__submit-button {
+            width: 300px;
+            margin-bottom: 0;
+        }
+
+        &__mandatory-field {
+            margin-bottom: 0;
+        }
     }
 }
 
@@ -59,14 +488,114 @@
     .form {
         @include desktop-positionner;
 
+        &__fields {
+            justify-content: space-between;
+        }
+
+        &__text {
+            padding: 0 70px;
+            margin-bottom: 85px;
+
+            span {
+                display: inline;
+            }
+        }
+
         &__text-wrapper {
 
             &--personal-info {
-                width: 40%;
+                width: 435px;
             }
 
             &--plarform {
-                width: 40%;
+                width: 435px;
+                margin-top: -14px;
+                padding-top: 50px;
+                padding-bottom: 16px;
+                padding-left: 65px;
+                padding-right: 10px;
+
+                .form__title {
+                    padding: 0;
+                }
+
+                .form__toggle-wrapper {
+                    margin-bottom: 44px;
+                }
+            }
+
+            &--personal-contact {
+
+                .form__field-wrapper {
+                    width: 372px;
+                    margin-bottom: 0;
+
+                    &:last-child {
+                        margin-bottom: 7px;
+                    }
+                }
+
+                .form__text-field {
+                    flex-grow: 0;
+                }
+            }
+
+            &--attainment {
+                padding-bottom: 13px;
+
+                .form__toggle-wrapper {
+                    width: 211px;
+                    min-width: auto;
+                }
+            }
+
+            &--review {
+                padding-bottom: 30px;
+                margin-bottom: 66px;
+
+                .form__title {
+                    padding-bottom: 35px;
+                }
+
+                .form__text-field--review {
+                    min-height: 127px;
+                }
+            }
+        }
+
+        &__positioner {
+            @include flex-sb;
+            align-items: flex-start;
+            flex-wrap: wrap;
+
+            &--toggle {
+                width: 275px;
+
+                .form__toggle-wrapper {
+                    width: 275px;
+                }
+
+                &:nth-child(2) {
+                    margin-left: 20px;
+                }
+
+                &:last-child {
+                    width: 230px;
+                }
+            }
+        }
+
+        &__title--contact-info {
+            padding-bottom: 35px;
+        }
+
+        &__mandatory-field {
+            padding-top: 5px;
+
+            font-size: 14px;
+
+            span {
+                display: inline;
             }
         }
     }

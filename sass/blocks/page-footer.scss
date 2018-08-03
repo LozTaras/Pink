@@ -1,5 +1,96 @@
 .page-footer {
     display: none;
+
+    &--competition {
+        display: block;
+
+        .logo__svg--competition {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 41px;
+        }
+
+        .logo__glasses {
+            display: block;
+
+            path {
+                fill: $pink;
+            }
+        }
+
+        .social {
+            @include reset-list;
+            @include flex-sb;
+
+            width: 180px;
+            margin: 0 auto;
+            margin-bottom: 35px;
+
+            .social__link {
+                display: block;
+                width: 50px;
+                height: 50px;
+
+                border: 3px solid #e9ebec;
+                border-radius: 50%;
+                background: url('../img/icon-twitter.svg') no-repeat 50% 50%;
+
+                .social__link:hover {
+                    border: 3px solid $main-color;
+                }
+
+                .social__link:active {
+                    opacity: 0.3;
+                }
+            }
+
+            .social__link--fb {
+                background: url('../img/icon-facebook.svg') no-repeat 50% 50%;
+            }
+
+            .social__link--yt {
+                background: url('../img/icon-youtube.svg') no-repeat 50% 50%;
+            }
+        }
+
+        .page-footer__copyright-link {
+            @include flex-sb;
+
+            width: 137px;
+            justify-content: center;
+            align-items: center;
+
+            text-decoration: none;
+        }
+
+        .page-footer__copyright-link:hover {
+            path {
+                fill: $main-color;
+            }
+        }
+
+        .page-footer__copyright-link:active {
+            svg {
+                opacity: 0.3;
+            }
+        }
+
+        .page-footer__copyright {
+            display: flex;
+            margin-bottom: 25px;
+
+            justify-content: center;
+        }
+
+        .page-footer__text {
+            margin-right: 5px;
+
+            font-size: 14px;
+            line-height: 18px;
+            color: $main-color;
+            font-weight: 400;
+        }
+    }
 }
 
 @media (min-width: $tablet-width) {
@@ -60,6 +151,22 @@
             opacity: 0.3;
         }
     }
+
+    &--competition {
+        .logo__glasses {
+            display: block;
+        }
+
+        .social {
+            width: 194px;
+            padding-top: 4px;
+            padding-right: 18px;
+        }
+
+        .page-footer__copyright-link {
+            margin-bottom: 6px;
+        }
+    }
 }
 
     .social {
@@ -88,11 +195,11 @@
             }
 
             &:hover {
-                border: 3px solid $main-color;
+                border: 3px solid $main-color !important;
             }
 
             &:active {
-                opacity: 0.3;
+                opacity: 0.3 !important;
             }
         }
     }
@@ -103,7 +210,7 @@
         @include desktop-positionner;
 
         padding-top: 71px;
-        padding-bottom: 67px;
+        padding-bottom: 40px;
         padding-right: 3px;
 
         &__link {
@@ -118,6 +225,29 @@
 
       &__copyright-link {
           width: 160px;
+      }
+
+      &--competition {
+          padding-top: 22px;
+
+          .logo__glasses {
+              display: none;
+          }
+
+          .page-footer__copyright-link {
+              width: 160px;
+          }
+
+          .page-footer__text {
+              font-size: 18px;
+              line-height: 58px;
+          }
+
+          .social {
+              width: 192px;
+              padding-left: 15px;
+              padding-right: 0;
+          }
       }
     }
 

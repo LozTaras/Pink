@@ -190,6 +190,18 @@
 
         background-color: $main-color;
     }
+
+    &--competition {
+        padding-bottom: 54px;
+
+        .page-header__wrapper {
+            margin-bottom: 30px;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
 }
 
 @media (min-width: $tablet-width) {
@@ -230,6 +242,14 @@
         &__main-nav {
             top: 111px;
         }
+
+        &--competition {
+            padding-bottom: 79px;
+
+            .page-header__wrapper {
+                margin-bottom: 35px;
+            }
+        }
     }
 }
 
@@ -240,7 +260,7 @@
 
         &__wrapper {
             width: 100%;
-            padding-top: 38px;
+            padding-top: 27px;
             padding-bottom: 32px;
 
             background-color: $bg-color;
@@ -250,7 +270,7 @@
 
                 width: 960px;
                 height: 776px;
-                margin-top: -12px;
+                margin-top: -1px;
 
                 background-image: url('../img/iphone-hand-desktop@1x.png');
                 background-position: -29% 100%;
@@ -319,6 +339,16 @@
 
         &__pos-wrapper {
             @include desktop-positionner;
+        }
+
+        &--competition {
+            margin-bottom: 92px;
+            padding-bottom: 101px;
+
+            .page-header__wrapper {
+                margin-bottom: 63px;
+
+            }
         }
     }
 }

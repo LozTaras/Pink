@@ -61,8 +61,7 @@
 
         min-height: 202px;
 
-        background: url('../img/bg-map-mobile@1x.jpg') no-repeat bottom left;
-        background-size: 100% auto;
+        background: url('../img/bg-map-mobile@1x.jpg') no-repeat bottom center;
 
         &::before {
             content: '';
@@ -134,7 +133,7 @@
         &__map {
             min-height: 375px;
 
-            background: url('../img/bg-map-tablet@1x.jpg') no-repeat bottom left;
+            background: url('../img/bg-map-tablet@1x.jpg') no-repeat center -383px;
 
             &::before {
                 content: '';
@@ -195,7 +194,7 @@
         &__map {
             min-height: 563px;
 
-            background: url('../img/bg-map-tablet@1x.jpg') no-repeat bottom left;
+            background: url('../img/bg-map-desktop@1x.jpg') no-repeat center -277px;
 
             &::before {
                 content: '';
