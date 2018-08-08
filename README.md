@@ -6,8 +6,10 @@
 
  - HTML
  - CSS
+ - Сетка на Flexbox
  - Адаптивная верстка
  - Резиновая верстка
+ - Mobile First Layout
  - SASS
  - JavaScript
  - Gulp
