@@ -1,13 +1,51 @@
 .photo-gallery {
     @include mobile-positionner;
+    padding-top: 21px;
+
+    &__list {
+        @include reset-list;
+    }
 
     &__item {
         width: 100%;
+        padding-bottom: 20px;
+        margin-bottom: 21px;
+
+        background-color: $ligth-grey;
+    }
+
+    &__image {
+        width: 100%;
+    }
+
+    &__comment {
+        padding: 0 18px;
+        padding-top: 10px;
+    }
+
+    &__user {
+        @include reset;
+
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    &__time {
+        font-size: 12px;
+        font-weight: 300;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        @include reset;
+
+        margin-bottom: 9px;
     }
 }
 
 @media (min-width: $tablet-width) {
     .photo-gallery {
+        padding-top: 50px;
 
         &__list {
             @include flex-sb;
@@ -16,7 +54,40 @@
         }
 
         &__item {
-            width: 45%;
+            display: flex;
+            flex-direction: column;
+            min-height: 454px;
+            width: 48.4%;
+            padding-bottom: 26px;
+        }
+
+        &__comment {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 0 28px;
+            padding-top: 17px;
+        }
+
+        &__text {
+            width: 100%;
+            padding-bottom: 7px;
+        }
+
+        &__like {
+            display: block;
+            width: 100%;
+            margin-top: auto;
+            padding-left: 0;
+
+            text-align: left;
+
+            &::before {
+                top: 1px;
+                left: auto;
+                right: 5px;
+            }
         }
     }
 }
@@ -25,8 +96,27 @@
     .photo-gallery {
         @include desktop-positionner;
 
+        padding-top: 51px;
+
         &__item {
-            width: 30%;
+            margin-bottom: 55px;
+            min-height: 554px;
+            width: 31.9%;
+
+            &:nth-child(n + 4) {
+                margin-bottom: 0;
+            }
+        }
+
+        &__user {
+            margin-bottom: -1px;
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 24px;
         }
     }
 }

@@ -163,8 +163,7 @@
 
         &:active:not(&--active) {
             .page-header__link {
-                color: $white;
-                opacity: 0.3;
+                color: rgba(255, 255, 255, 0.3);
             }
         }
 
@@ -193,6 +192,18 @@
 
     &--competition {
         padding-bottom: 54px;
+
+        .page-header__wrapper {
+            margin-bottom: 30px;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    &--photos {
+        padding-bottom: 84px;
 
         .page-header__wrapper {
             margin-bottom: 30px;
@@ -245,6 +256,14 @@
 
         &--competition {
             padding-bottom: 79px;
+
+            .page-header__wrapper {
+                margin-bottom: 35px;
+            }
+        }
+
+        &--photos {
+            padding-bottom: 139px;
 
             .page-header__wrapper {
                 margin-bottom: 35px;
@@ -342,6 +361,16 @@
         }
 
         &--competition {
+            margin-bottom: 92px;
+            padding-bottom: 101px;
+
+            .page-header__wrapper {
+                margin-bottom: 63px;
+
+            }
+        }
+
+        &--photos {
             margin-bottom: 92px;
             padding-bottom: 101px;
 

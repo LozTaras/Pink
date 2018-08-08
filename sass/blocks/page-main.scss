@@ -3,6 +3,19 @@
     &__reviews {
         margin-bottom: 42px;
     }
+
+    &__text {
+        @include mobile-positionner;
+
+        padding-bottom: 35px;
+
+        text-align: center;
+        line-height: 30px;
+    }
+
+    &__photos {
+        padding-top: 31px;
+    }
 }
 
 @media (min-width: $tablet-width) {
@@ -10,6 +23,22 @@
 
         &__reviews {
             margin-bottom: 19px;
+        }
+
+        &__text {
+            padding-bottom: 58px;
+
+            font-size: 18px;
+            padding-left: 50px;
+            padding-right: 50px;
+
+            br {
+                display: none;
+            }
+        }
+
+        &__photos {
+            padding-top: 74px;
         }
     }
 }
@@ -19,6 +48,18 @@
 
         &__reviews {
             margin-bottom: -17px;
+        }
+
+        &__text {
+            padding-bottom: 71px;
+
+            br {
+                display: block;
+            }
+        }
+
+        &__photos {
+            padding-top: 0;
         }
     }
 }

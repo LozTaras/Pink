@@ -1,13 +1,147 @@
 .panorama {
-    @include mobile-positionner;
+    position: relative;
+
+    &__title {
+        position: absolute;
+        top: 0;
+        right: 20px;
+        z-index: 1;
+
+        @include reset;
+        padding: 6px 19px;
+
+        font-size: 12px;
+        text-transform: uppercase;
+        color: $white;
+        font-weight: 700;
+
+        background-color: $pink;
+    }
+
+    &__image {
+        width: 100%;
+        margin-bottom: -7px;
+    }
+
+    &__comment {
+        @include reset;
+        margin: 0 20px;
+        padding: 0 17px;
+        padding-top: 18px;
+        padding-bottom: 21px;
+
+        background-color: $ligth-grey;
+    }
+
+    &__user {
+        @include reset;
+
+        font-size: 14px;
+        color: $main-color;
+    }
+
+    &__time {
+        font-weight: 300;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+
+    &__text {
+        @include reset;
+
+        margin-bottom: 8px;
+    }
 }
 
 @media (min-width: $tablet-width) {
+    .panorama {
+        overflow: hidden;
+        width: 100%;
 
+
+        &__title {
+            top: 57px;
+            right: 21px;
+        }
+
+        &__image {
+            position: relative;
+            width: auto;
+            max-width: inherit;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &__comment {
+            position: relative;
+
+            padding: 0 27px;
+            padding-top: 24px;
+            padding-bottom: 16px;
+
+            .panorama__like {
+                position: absolute;
+                top: 29px;
+                right: 27px;
+
+                padding-left: 0;
+                padding-right: 32px;
+
+                &::before {
+                    top: 1px;
+                    left: auto;
+                    right: 3px;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 700px) {
+    .panorama {
+
+        &__image {
+            position: static;
+            width: 100%;
+            transform: none;
+        }
+    }
 }
 
 @media (min-width: $desktop-width) {
     .panorama {
-        @include desktop-positionner;
+
+        &__title {
+            top: 53px;
+            right: 131px;
+
+            padding: 3px 19px
+        }
+
+        &__wrapper {
+            @include desktop-positionner;
+        }
+
+        &__comment {
+            margin: 0 1px;
+            padding: 0px 26px;
+            padding-top: 25px;
+            padding-bottom: 15px;
+
+            .panorama__like {
+                top: 27px;
+                right: 29px;
+            }
+        }
+
+        &__text {
+            font-size: 14px;
+            line-height: 24px;
+        }
+
+        &__user {
+            line-height: 20px;
+        }
     }
 }

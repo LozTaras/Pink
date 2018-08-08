@@ -1,0 +1,37 @@
+.like {
+    position: relative;
+
+    padding-left: 32px;
+
+    font-size: 12px;
+    color: $pink;
+    text-transform: uppercase;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.5s;
+
+    &::before {
+        content: url('../img/icon-heart.png');
+
+        position: absolute;
+        top: 1px;
+        left: 2px;
+    }
+
+    &--active {
+        opacity: 1;
+
+        &::before {
+            content: url('../img/icon-heart2.png');
+        }
+    }
+
+    &:hover,
+    &:active {
+        opacity: 1;
+    }
+}

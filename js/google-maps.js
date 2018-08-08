@@ -8,7 +8,7 @@ if(document.body.classList.contains('main')) {
         var beachMarker = new google.maps.Marker({
               position: {lat: 59.936102, lng: 30.321534},
               map: map,
-              icon: 'img/icon-map-marker.svg'
+              icon: 'img/icon-map-marker.png'
         });
     }
 }
