@@ -1,5 +1,6 @@
 .form {
     padding-top: 45px;
+    padding-bottom: 16px;
 
     &__text {
         @include reset;
@@ -69,7 +70,7 @@
         @include reset;
         @include mobile-positionner;
 
-        margin-bottom: 52px;
+        margin-bottom: 56px;
     }
 
     &__toggle-wrapper:last-child {
@@ -250,7 +251,6 @@
 
     &__mandatory-field {
         @include reset;
-        margin-bottom: 55px;
 
         text-align: center;
         line-height: 30px;
@@ -410,6 +410,7 @@
         }
 
         &__toggle-wrapper {
+            margin-bottom: 52px;
             padding: 0;
         }
 

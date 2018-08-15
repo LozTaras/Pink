@@ -1,4 +1,8 @@
 (function () {
+    if(!document.body.classList.contains('photos')) {
+        return;
+    }
+    
     var iconsList = document.querySelector('.post__icons-list');
     var icons = document.querySelectorAll('.post__icons-item');
     var sliders = document.querySelectorAll('.post__scale-item');

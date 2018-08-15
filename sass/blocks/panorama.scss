@@ -1,6 +1,8 @@
 .panorama {
     position: relative;
 
+    min-width: 320px;
+
     &__title {
         position: absolute;
         top: 0;

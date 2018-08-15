@@ -3,6 +3,8 @@
 
     &--competition {
         display: block;
+        min-width: 320px;
+        padding-top: 39px;
 
         .logo__svg--competition {
             display: block;
@@ -153,7 +155,7 @@
     }
 
     &--competition {
-        padding-bottom: 0; 
+        padding-bottom: 0;
 
         .logo__glasses {
             display: block;
