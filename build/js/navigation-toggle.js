@@ -1,0 +1,1 @@
+!function(){var e=document.querySelector(".page-header__toggle"),n=document.querySelector(".page-header__inner-wrapper");e.addEventListener("click",function(){n.classList.toggle("page-header__inner-wrapper--open")}),document.addEventListener("keydown",function(e){27==e.which&&n.classList.remove("page-header__inner-wrapper--open")})}();

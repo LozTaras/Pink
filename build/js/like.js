@@ -1,0 +1,1 @@
+document.addEventListener("click",function(e){for(var i=e.target;i!=this&&!i.classList.contains("like");)i=i.parentNode;if(i!=this){var t=i.querySelector(".like__count");i.classList.contains("like--active")?t.innerHTML--:t.innerHTML++,i.classList.toggle("like--active")}});
