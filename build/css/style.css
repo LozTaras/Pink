@@ -2267,12 +2267,15 @@ img {
     padding-top: 20px;
     background-color: #f2f2f2; }
   .post__image-wrapper {
-    flex-grow: 1; }
-  .post__image {
     min-width: 320px;
     padding: 0 20px;
+    flex-grow: 1; }
+  .post__image {
+    position: relative;
     margin: 0 auto;
     display: block; }
+  .post__image-overflow {
+    overflow: hidden; }
   .post__icons-list {
     margin: 0;
     padding: 0;
@@ -2301,17 +2304,19 @@ img {
     padding-top: 28px;
     padding-bottom: 34px; }
     .post__scale-item--hidden {
-      display: none; }
+      position: absolute;
+      left: -1000px;
+      width: 93.77%; }
   .post__filter-scale {
     position: relative;
-    width: 84%;
+    width: 83.6%;
     height: 2px;
     margin: 0 auto;
     background-color: #283645; }
   .post__toggle {
     position: absolute;
     top: -6px;
-    left: 189px;
+    left: 47.645%;
     width: 14px;
     height: 14px;
     border: 2px solid #d22856;
@@ -2404,7 +2409,10 @@ img {
     padding-top: 19px;
     padding-bottom: 50.4px; }
     .post__scale-item--hidden {
-      display: list-item; }
+      position: relative;
+      top: auto;
+      left: auto;
+      width: auto; }
     .post__scale-item::after {
       content: '';
       position: absolute;
@@ -2413,12 +2421,6 @@ img {
       right: 0;
       height: 1px;
       background-color: #dddfe0; }
-  .post__toggle--crop {
-    left: 145px; }
-  .post__toggle--fill {
-    left: 24px; }
-  .post__toggle--сontr {
-    left: 95px; }
   .post__hr {
     display: none; }
   .post__buttons {
@@ -2448,11 +2450,12 @@ img {
       padding-top: 60px;
       padding-bottom: 66px; }
     .post__image-wrapper {
-      flex-grow: 0; }
+      flex-grow: 0;
+      padding-left: 81px; }
     .post__image {
       max-height: 400px;
-      padding: 0;
-      padding-left: 81px; }
+      min-width: auto;
+      padding: 0; }
     .post__inner-wrapper {
       min-width: 468px;
       padding-right: 43px;
@@ -2470,12 +2473,6 @@ img {
     .post__icons-item--small svg {
       width: 32px;
       height: 32px; }
-    .post__toggle--crop {
-      left: 71px; }
-    .post__toggle--fill {
-      left: 247px; }
-    .post__toggle--сontr {
-      left: 160px; }
     .post__buttons {
       flex-direction: row;
       justify-content: space-between;

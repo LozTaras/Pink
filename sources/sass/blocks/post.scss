@@ -22,14 +22,20 @@
     }
 
     &__image-wrapper {
+        @include mobile-positionner;
+
         flex-grow: 1;
     }
 
     &__image {
-        @include mobile-positionner;
-
+        position: relative;
+        
         margin: 0 auto;
         display: block;
+    }
+
+    &__image-overflow {
+        overflow: hidden;
     }
 
     &__icons-list {
@@ -70,14 +76,17 @@
         padding-bottom: 34px;
 
         &--hidden {
-            display: none;
+            position: absolute;
+            left: -1000px;
+
+            width: 93.77%;
         }
     }
 
     &__filter-scale {
         position: relative;
 
-        width: 84%;
+        width: 83.6%;
         height: 2px;
         margin: 0 auto;
 
@@ -87,7 +96,7 @@
     &__toggle {
         position: absolute;
         top: -6px;
-        left: 189px;
+        left: 47.645%;
 
         width: 14px;
         height: 14px;
@@ -232,7 +241,11 @@
             padding-bottom: 50.4px;
 
             &--hidden {
-                display: list-item;
+                position: relative;
+                top: auto;
+                left: auto;
+
+                width: auto;
             }
 
             &::after {
@@ -247,18 +260,6 @@
 
                 background-color: #dddfe0;
             }
-        }
-
-        &__toggle--crop {
-            left: 145px;
-        }
-
-        &__toggle--fill {
-            left: 24px;
-        }
-
-        &__toggle--сontr {
-            left: 95px;
         }
 
         &__hr {
@@ -305,12 +306,13 @@
 
         &__image-wrapper {
             flex-grow: 0;
+            padding-left: 81px;
         }
 
         &__image {
             max-height: 400px;
+            min-width: auto;
             padding: 0;
-            padding-left: 81px;
         }
 
         &__inner-wrapper {
@@ -347,18 +349,6 @@
                     height: 32px;
                 }
             }
-        }
-
-        &__toggle--crop {
-            left: 71px;
-        }
-
-        &__toggle--fill {
-            left: 247px;
-        }
-
-        &__toggle--сontr {
-            left: 160px;
         }
 
         &__buttons {
