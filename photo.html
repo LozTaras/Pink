@@ -6,6 +6,7 @@
     <title>Pink</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="js/oldIeBanner.js"></script>
+    <script src="js/picturefill.js"></script>
   </head>
   <body class="photos">
       <header class="page-header page-header--photos">
@@ -185,11 +186,13 @@
               <h2 class="post__title">Затмите их всех!<br> Выкладывайте все, что накопилось в телефоне!</h2>
               <div class="post__wrapper">
                   <div class="post__image-wrapper">
-                      <picture>
-                          <source media="(min-width:960px)" setsrc="photo-7-desktop@1x.jpg">
-                          <source media="(min-width:660px)" setsrc="photo-7-tablet@1x.jpg">
-                          <img class="post__image" src="img/photo-7-mobile@2x.jpg" alt="Загруженное фото">
-                      </picture>
+                      <div class="post__image-overflow">
+                          <picture>
+                              <source media="(min-width:960px)" setsrc="photo-7-desktop@1x.jpg">
+                              <source media="(min-width:660px)" setsrc="photo-7-tablet@1x.jpg">
+                              <img class="post__image" src="img/photo-7-mobile@2x.jpg" alt="Загруженное фото">
+                          </picture>
+                      </div>
                   </div>
 
                   <div class="post__inner-wrapper">
@@ -236,7 +239,7 @@
 
                       <div class="post__buttons">
                           <button class="post__btn" type="button">Запостить</button>
-                          <button class="post__btn" type="button" disabled>Отмена</button>
+                          <button class="post__btn post__btn--reset" type="button" disabled>Отмена</button>
                       </div>
                   </div>
               </div>
@@ -309,6 +312,10 @@
           </div>
       </footer>
 
-      <script src="js/script.min.js"></script>
+      <script src="js/like.js"></script>
+      <script src="js/navigation-toggle.js"></script>
+      <script src="js/sliders-toggle.js"></script>
+      <script src="js/foto-filters.js"></script>
+
   </body>
 </html>
