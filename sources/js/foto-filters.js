@@ -256,7 +256,7 @@
             maxLeft = scale.offsetWidth - handle.offsetWidth;
             persend = parseFloat(getComputedStyle(handle).left) / (maxLeft / 100);
             var oldValue = getComputedStyle(image).filter;
-            var bright = (1.4 / 100) * persend + 0.5;
+            var bright = (1.4 / 100) * persend + 0.3;
             var conrt = 1;
 
             if(/contrast/.test(oldValue)) {
@@ -270,7 +270,7 @@
             maxLeft = scale.offsetWidth - handle.offsetWidth;
             persend = parseFloat(getComputedStyle(handle).left) / (maxLeft / 100);
             var oldValue = getComputedStyle(image).filter;
-            var conrt = (1.4 / 100) * persend + 0.5;
+            var conrt = (1.4 / 100) * persend + 0.3;
             var bright = 1;
 
             if(/brightness/.test(oldValue)) {
@@ -285,7 +285,7 @@
             image.style.top = '0';
             maxLeft = scale.offsetWidth - handle.offsetWidth;
             persend = parseFloat(getComputedStyle(handle).left) / (maxLeft / 100);
-            var crop = (1.4 / 100) * persend + 0.5;
+            var crop = (1.4 / 100) * persend + 0.3;
 
             image.style.transform = 'scale(' + crop + ')';
         }
