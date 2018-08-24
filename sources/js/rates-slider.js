@@ -2,26 +2,29 @@
     var table = document.querySelector('.rates__list');
     var buttons = document.querySelectorAll('.rates .slider-controls__toggle');
     var currentPos = 1;
+    var start = 0;
 
     for(var i = 0; i < buttons.length; i++) {
         buttons[i].addEventListener('click', slide);
     }
 
-    table.addEventListener('touchstart', touch);
+    table.addEventListener('touchstart', touchSt);
+
+    table.addEventListener('touchend', touchEnd);
 
     window.addEventListener('resize', resize);
 
-    function touch(evt) {
-        var start = evt.changedTouches[0].clientX;
+    function touchSt(evt) {
+        start = evt.changedTouches[0].clientX;
+    }
 
-        table.addEventListener('touchend', function(evt) {
-            var end = evt.changedTouches[0].clientX;
+    function touchEnd(evt) {
+        var end = evt.changedTouches[0].clientX;
 
-            if(start > end || start - end > 50) nextSlide();
-            if(start < end || end - start > 50) prevSlide();
+        if(start > end && start - end > 50) nextSlide();
+        if(start < end && end - start > 50) prevSlide();
 
-            table.removeEventListener('touchstart', touch);
-        });
+        start = null;
     }
 
     function slide() {

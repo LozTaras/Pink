@@ -198,19 +198,19 @@
 
             handle.style.backgroundColor = '#d22856';
 
-            handle.addEventListener('touchmove', moveAt);
-            handle.addEventListener('touchend', stopMove);
+            document.addEventListener('touchmove', moveAt);
+            document.addEventListener('touchend', stopMove);
 
             if(options.type == 'crop') {
-                handle.addEventListener('touchmove', crop);
+                document.addEventListener('touchmove', crop);
             }
 
             if(options.type == 'fill') {
-                handle.addEventListener('touchmove', fill);
+                document.addEventListener('touchmove', fill);
             }
 
             if(options.type == 'сontr') {
-                handle.addEventListener('touchmove', сontr);
+                document.addEventListener('touchmove', сontr);
             }
 
             function moveAt(evt) {
