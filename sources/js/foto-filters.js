@@ -281,6 +281,8 @@
         }
 
         function crop(evt) {
+            image.style.left = '0';
+            image.style.top = '0';
             maxLeft = scale.offsetWidth - handle.offsetWidth;
             persend = parseFloat(getComputedStyle(handle).left) / (maxLeft / 100);
             var crop = (1.4 / 100) * persend + 0.5;

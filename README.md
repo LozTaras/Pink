@@ -1,7 +1,5 @@
 # Pink
 
-ПРОЕКТ В НЕ ЗАКОНЧЕН!
-
 Использлваные технологии:
 
  - HTML
@@ -11,6 +9,7 @@
  - Резиновая верстка
  - Mobile First Layout
  - SASS
+ - Pixel Perfect
  - JavaScript
  - Gulp
 
