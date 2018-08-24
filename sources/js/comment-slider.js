@@ -1,8 +1,4 @@
 (function() {
-    if(!document.body.classList.contains('main')) {
-        return;
-    }
-
     var contentWidth = document.body.querySelector('.reviews__content').offsetWidth;
     var nextBtn      = document.body.querySelector('.reviews__button--next');
     var prevBtn      = document.body.querySelector('.reviews__button--prev');
@@ -10,6 +6,7 @@
     var sliderItems  = document.body.querySelectorAll('.reviews__item');
     var mobileBtns   = document.body.querySelectorAll('.reviews .slider-controls__toggle');
     var test         = false;
+    var start        = null;
     var current      = 0;
 
     if(document.documentElement.clientWidth < 960) {
@@ -26,55 +23,13 @@
         }
     });
 
-    nextBtn.addEventListener('click', function() {
-        if(test) {
-            return;
-        }
-        onTransition();
+    nextBtn.addEventListener('click', nextSlide);
 
-        var tmp = current - 1;
-        if(tmp < 0) {
-            tmp = sliderItems.length - 1;
-        }
+    prevBtn.addEventListener('click', prevSlide);
 
-        sliderItems[tmp].style.marginLeft = parseFloat(getComputedStyle(sliderItems[tmp]).marginLeft) - contentWidth + 'px';
+    list.addEventListener('touchstart', touch);
 
-        current++;
-        if(current >= sliderItems.length) {
-            current = 0;
-        }
-        test = true;
-
-        setTimeout(function() {
-            prevNextSlideDesktop();
-            test = false;
-        }, 1000);
-    });
-
-    prevBtn.addEventListener('click', function() {
-        if(test) {
-            return;
-        }
-        onTransition();
-
-        var tmp = current - 1;
-        if(tmp < 0) {
-            tmp = sliderItems.length - 1;
-        }
-
-        sliderItems[tmp].style.marginLeft = '';
-
-        current--;
-        if(current < 0) {
-            current = sliderItems.length - 1;
-        }
-        test = true;
-
-        setTimeout(function() {
-            prevNextSlideDesktop();
-            test = false;
-        }, 1000);
-    });
+    list.addEventListener('touchend', touchEnd);
 
     for(var i = 0; i < mobileBtns.length; i++) {
         mobileBtns[i].onclick = mobileSlider;
@@ -103,7 +58,6 @@
             sliderItems[0].style.marginLeft = -contentWidth * 2 + 'px';
         }
     }
-
 
     function prevNextSlideDesktop() {
         contentWidth = document.body.querySelector('.reviews__content').offsetWidth;
@@ -160,4 +114,99 @@
         deselectedAll();
         mobileBtns[current].classList.add('slider-controls__toggle--active');
     }
+
+    function touchMobileSlider() {
+        contentWidth = document.body.querySelector('.reviews__content').offsetWidth;
+
+        if(current) {
+            sliderItems[0].style.marginLeft = current * -contentWidth + 'px';
+        } else {
+            sliderItems[0].style.marginLeft = '';
+        }
+
+        deselectedAll();
+        mobileBtns[current].classList.add('slider-controls__toggle--active');
+    }
+
+    function nextSlide() {
+        if(test) {
+            return;
+        }
+        onTransition();
+
+        var tmp = current - 1;
+        if(tmp < 0) {
+            tmp = sliderItems.length - 1;
+        }
+
+        sliderItems[tmp].style.marginLeft = parseFloat(getComputedStyle(sliderItems[tmp]).marginLeft) - contentWidth + 'px';
+
+        current++;
+        if(current >= sliderItems.length) {
+            current = 0;
+        }
+        test = true;
+
+        setTimeout(function() {
+            prevNextSlideDesktop();
+            test = false;
+        }, 1000);
+    }
+
+    function prevSlide() {
+        if(test) {
+            return;
+        }
+        onTransition();
+
+        var tmp = current - 1;
+        if(tmp < 0) {
+            tmp = sliderItems.length - 1;
+        }
+
+        sliderItems[tmp].style.marginLeft = '';
+
+        current--;
+        if(current < 0) {
+            current = sliderItems.length - 1;
+        }
+        test = true;
+
+        setTimeout(function() {
+            prevNextSlideDesktop();
+            test = false;
+        }, 1000);
+    }
+
+    function touch(evt) {
+        start = evt.changedTouches[0].clientX;
+    }
+
+    function touchEnd(evt) {
+       var end;
+       if(document.documentElement.clientWidth > 960) {
+           end= evt.changedTouches[0].clientX;
+
+           if(start > end && start - end > 50) nextSlide();
+           if(start < end && end - start > 50) prevSlide();
+       } else {
+           end= evt.changedTouches[0].clientX;
+
+           if(start > end && (start - end) > 50) {
+               current++;
+               if(current > 2) current = 2;
+
+               touchMobileSlider();
+           }
+           if(start < end && end - start > 50) {
+               current--;
+               if(current < 0) current = 0;
+
+               touchMobileSlider();
+           }
+       }
+
+       start = null;
+   }
+
 })();

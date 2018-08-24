@@ -189,6 +189,58 @@
             }
         });
 
+        handle.addEventListener('touchstart', function(evt) {
+            handleCoords = getCoords(handle);
+            scaleCoords = getCoords(scale);
+
+            var shiftX = evt.changedTouches[0].pageX - handleCoords.left;
+            maxLeft = scale.offsetWidth - handle.offsetWidth;
+
+            handle.style.backgroundColor = '#d22856';
+
+            handle.addEventListener('touchmove', moveAt);
+            handle.addEventListener('touchend', stopMove);
+
+            if(options.type == 'crop') {
+                handle.addEventListener('touchmove', crop);
+            }
+
+            if(options.type == 'fill') {
+                handle.addEventListener('touchmove', fill);
+            }
+
+            if(options.type == 'сontr') {
+                handle.addEventListener('touchmove', сontr);
+            }
+
+            function moveAt(evt) {
+                evt.preventDefault();
+                var newLeft = evt.changedTouches[0].pageX - scaleCoords.left - shiftX;
+
+                if(reset.disabled) {
+                    reset.disabled = false;
+                }
+                if(newLeft <= 0) newLeft = 0;
+
+                if(newLeft > maxLeft) {
+                    newLeft = maxLeft;
+                }
+
+                handle.style.left = newLeft + 'px';
+            }
+
+            function stopMove() {
+                handle.style.backgroundColor = '';
+                document.body.style.cursor = '';
+
+                document.removeEventListener('mousemove', moveAt);
+                document.removeEventListener('mousemove', fill);
+                document.removeEventListener('mousemove', сontr);
+                document.removeEventListener('mousemove', crop);
+                document.removeEventListener('mouseup', stopMove);
+            }
+        });
+
         function getCoords(elem) {
             var box = elem.getBoundingClientRect();
 
@@ -204,7 +256,7 @@
             maxLeft = scale.offsetWidth - handle.offsetWidth;
             persend = parseFloat(getComputedStyle(handle).left) / (maxLeft / 100);
             var oldValue = getComputedStyle(image).filter;
-            var bright = (2 / 100) * persend;
+            var bright = (1.4 / 100) * persend + 0.5;
             var conrt = 1;
 
             if(/contrast/.test(oldValue)) {
@@ -218,7 +270,7 @@
             maxLeft = scale.offsetWidth - handle.offsetWidth;
             persend = parseFloat(getComputedStyle(handle).left) / (maxLeft / 100);
             var oldValue = getComputedStyle(image).filter;
-            var conrt = (2 / 100) * persend;
+            var conrt = (1.4 / 100) * persend + 0.5;
             var bright = 1;
 
             if(/brightness/.test(oldValue)) {
@@ -231,7 +283,7 @@
         function crop(evt) {
             maxLeft = scale.offsetWidth - handle.offsetWidth;
             persend = parseFloat(getComputedStyle(handle).left) / (maxLeft / 100);
-            var crop = (1.4 / 100) * persend + 0.3;
+            var crop = (1.4 / 100) * persend + 0.5;
 
             image.style.transform = 'scale(' + crop + ')';
         }

@@ -37,7 +37,7 @@
                 border-radius: 50%;
                 background: url('../img/icon-twitter.svg') no-repeat 50% 50%;
 
-                .social__link:hover {
+                &:hover {
                     border: 3px solid $main-color;
                 }
 
