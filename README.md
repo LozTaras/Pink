@@ -13,4 +13,4 @@
  - JavaScript
  - Gulp
 
-Силка на хостинг: https://loztaras.github.io/Pink/
+Силка на хостинг: https://loztaras.github.io/pink/
